@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jared\\source\\repos\\ResponsiveWebAppBrannen\\ResponsiveWebAppBrannen.csproj": {}
+    "C:\\Users\\jared\\source\\repos\\JayTB678\\CIS174-Advanced-C-\\ResponsiveWebAppBrannen\\ResponsiveWebAppBrannen.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jared\\source\\repos\\ResponsiveWebAppBrannen\\ResponsiveWebAppBrannen.csproj": {
+    "C:\\Users\\jared\\source\\repos\\JayTB678\\CIS174-Advanced-C-\\ResponsiveWebAppBrannen\\ResponsiveWebAppBrannen.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jared\\source\\repos\\ResponsiveWebAppBrannen\\ResponsiveWebAppBrannen.csproj",
+        "projectUniqueName": "C:\\Users\\jared\\source\\repos\\JayTB678\\CIS174-Advanced-C-\\ResponsiveWebAppBrannen\\ResponsiveWebAppBrannen.csproj",
         "projectName": "ResponsiveWebAppBrannen",
-        "projectPath": "C:\\Users\\jared\\source\\repos\\ResponsiveWebAppBrannen\\ResponsiveWebAppBrannen.csproj",
+        "projectPath": "C:\\Users\\jared\\source\\repos\\JayTB678\\CIS174-Advanced-C-\\ResponsiveWebAppBrannen\\ResponsiveWebAppBrannen.csproj",
         "packagesPath": "C:\\Users\\jared\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jared\\source\\repos\\ResponsiveWebAppBrannen\\obj\\",
+        "outputPath": "C:\\Users\\jared\\source\\repos\\JayTB678\\CIS174-Advanced-C-\\ResponsiveWebAppBrannen\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

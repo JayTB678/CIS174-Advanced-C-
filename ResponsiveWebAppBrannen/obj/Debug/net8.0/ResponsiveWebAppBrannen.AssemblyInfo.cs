@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ResponsiveWebAppBrannen")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa8a49a9fbb5cd426f81abe8b1e5db0dca52f884")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+31383aeb7c7a90f991c801c3017ae546c29257d3")]
 [assembly: System.Reflection.AssemblyProductAttribute("ResponsiveWebAppBrannen")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ResponsiveWebAppBrannen")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
