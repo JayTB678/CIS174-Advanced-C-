@@ -1,0 +1,32 @@
+﻿@model ResponsiveWebAppBrannen.Models.BirthAgeModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Web App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+</head>
+<body>
+    <h1>Responsive Web Application</h1>
+    <form asp-action="Index" method="post" class="form-horizontal">
+        <div asp-validation-summary="All"></div>
+        <div class="row">
+            <label asp-for="Name" class="control-label">First Name:</label>
+            <input asp-for="Name" id="name" class="form-control" />    
+        </div>
+        <div class="row">
+            <label asp-for="BirthYear" class="control-label">Year of Birth:</label>
+            <input asp-for="BirthYear" id="birthYear" class="form-control" />
+        </div>
+        <div class="row">
+            <p>@ViewBag.GA.ToString()</p>
+        </div>
+        <button type="submit">Get Age</button>
+        <button><a asp-action="Index">Clear</a></button>
+    </form>  
+</body>
+</html>
