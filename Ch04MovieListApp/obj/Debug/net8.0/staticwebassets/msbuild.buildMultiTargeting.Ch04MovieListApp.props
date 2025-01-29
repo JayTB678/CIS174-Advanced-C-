@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Ch04MovieListApp.props" />
+</Project>
