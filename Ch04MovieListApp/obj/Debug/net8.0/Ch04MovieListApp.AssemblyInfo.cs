@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ch04MovieListApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+771ce2ec521e2aa838b4876e4fe88e36b87f6b98")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4a917360b380a431b9bd18f9144ea07b6c4652f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ch04MovieListApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ch04MovieListApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

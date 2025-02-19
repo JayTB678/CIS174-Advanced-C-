@@ -68,5 +68,11 @@ namespace Ch04MovieListApp.Controllers
             context.SaveChanges();
             return RedirectToAction("Index", "Home");
         }
+
+        public IActionResult Display(string id)
+        {
+            int cnt = Convert.ToInt32(id);
+            return View(cnt);
+        }
     }
 }

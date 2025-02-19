@@ -33,6 +33,10 @@ namespace Ch04MovieListApp
             app.UseAuthorization();
 
             app.MapControllerRoute(
+                name: "Static",
+                pattern: "{controller=Home}/{action}/Page/{num}");
+
+            app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}/{slug?}");
 

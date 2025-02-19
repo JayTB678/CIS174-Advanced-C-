@@ -79,10 +79,31 @@ namespace Ch04MovieListApp.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        //public IActionResult Privacy()
-        //{
-        //return View();
-        //}
+        public IActionResult Display(string id)
+        {
+            int cnt = Convert.ToInt32(id);
+            return View(cnt);
+        }
+
+        public IActionResult Countdown(int id = 0)
+        {
+            string contentString = "Counting down:\n";
+            for(int i = id; i >= 0; i--)
+            {
+                contentString += i + "\n";
+            }
+            return Content(contentString);
+        }
+
+        public IActionResult StaticContent(string num)
+        {
+            return Content($"Static Content: {num}");
+        }
+
+        public IActionResult Privacy()
+        {
+        return View();
+        }
 
         //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         //public IActionResult Error()
