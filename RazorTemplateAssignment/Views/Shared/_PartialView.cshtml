@@ -1,0 +1,11 @@
+﻿@model RazorTemplateAssignment.Models.Student
+
+
+<tr>
+    <td>@Model.FirstName</td>
+    <td>@Model.LastName</td>
+    @if (ViewBag.ShowGrade != null && (bool)ViewBag.ShowGrade)
+    {
+        <td>@Model.Grade</td>
+    }
+</tr>

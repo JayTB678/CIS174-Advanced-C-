@@ -1,6 +1,12 @@
 ﻿################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
+**/bin/Debug/net5.0
+**/obj
+**/.vs/
+**/ServiceDependencies/
+*.csproj.user
+**/bin/
 
 /Test/.vs/Test
 /Ch04MovieListApp/.vs/Ch04MovieListApp
