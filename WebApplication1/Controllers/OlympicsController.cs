@@ -28,8 +28,11 @@ namespace WebApplication1.Controllers
             ViewBag.SelectedGame = game;
             ViewBag.SelectedCategory = category;
 
-            
-            return View(countries.ToList());
+            countries = countries.OrderBy(c => c.Name);
+
+            var countryList = countries.ToList();
+
+            return View(countryList);
         }
     }
 }
