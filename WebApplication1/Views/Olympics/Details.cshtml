@@ -1,0 +1,13 @@
+﻿
+@model OlympicSport
+
+<h1>@Model.Name</h1>
+<p>Sport: @Model.Sport</p>
+<p>@Model.Game - @Model.Category</p>
+<img src="@Model.FlagUrl" alt="@Model.Name" class="flag" />
+
+<form method="post" action="/Olympics/Favorites/@Model.Id">
+    <button type="submit">Add to Favorites</button>
+</form>
+
+<a href="/">Return to Home Page</a>

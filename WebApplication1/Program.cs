@@ -9,8 +9,10 @@ namespace WebApplication1
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddMemoryCache();
+            builder.Services.AddSession();
             // Add services to the container.
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews().AddNewtonsoftJson();
 
             builder.Services.AddDbContext<SportsContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("SportsContext")));
@@ -24,6 +26,7 @@ namespace WebApplication1
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            app.UseSession();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

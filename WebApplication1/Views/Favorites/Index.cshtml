@@ -1,0 +1,23 @@
+﻿@model List<OlympicSport>
+
+<h1>Favorite Countries</h1>
+
+@if (Model.Any())
+{
+    <div class="flags-container">
+        @foreach (var sport in Model)
+        {
+            <a href="/Olympics/Details/@sport.Id">
+                <img src="@sport.FlagUrl" alt="@sport.Name" title="@sport.Name - @sport.Game (@sport.Category)" class="flag" />
+            </a>
+        }
+    </div>
+    <form method="post" action="/Favorites/Clear">
+        <button type="submit">Clear Favorites</button>
+    </form>
+}
+else
+{
+    <p>No favorites have been added yet.</p>
+}
+<a href="/">Return to Home Page</a>

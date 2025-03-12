@@ -20,3 +20,14 @@ html {
 body {
   margin-bottom: 60px;
 }
+.flag {
+    margin: 10px;
+    cursor: pointer;
+    width: 80px;
+}
+
+button {
+    padding: 6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
