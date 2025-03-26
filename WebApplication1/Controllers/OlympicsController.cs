@@ -14,27 +14,23 @@ namespace WebApplication1.Controllers
         {
             context = cxt;
         }
-
-        public IActionResult Index(string game = "ALL", string category = "ALL")
+        public IActionResult Index(OlympicsViewModel model)
         {
-            
             var countries = context.OlympicSports.AsQueryable();
 
-            
-            if (game != "ALL") countries = countries.Where(c => c.Game == game);
-            if (category != "ALL") countries = countries.Where(c => c.Category == category);
+            if (model.SelectedGame != "ALL")
+                countries = countries.Where(c => c.Game == model.SelectedGame);
 
-            
-            ViewBag.Games = context.OlympicSports.Select(c => c.Game).Distinct().ToList();
-            ViewBag.Categories = context.OlympicSports.Select(c => c.Category).Distinct().ToList();
-            ViewBag.SelectedGame = game;
-            ViewBag.SelectedCategory = category;
+            if (model.SelectedCategory != "ALL")
+                countries = countries.Where(c => c.Category == model.SelectedCategory);
 
-            countries = countries.OrderBy(c => c.Name);
+            model.Games = context.OlympicSports.Select(c => c.Game).Distinct().ToList();
 
-            var countryList = countries.ToList();
+            model.Categories = context.OlympicSports.Select(c => c.Category).Distinct().ToList();
 
-            return View(countryList);
+            model.Countries = countries.OrderBy(c => c.Name).ToList();
+
+            return View(model);
         }
         public IActionResult Details(int id)
         {

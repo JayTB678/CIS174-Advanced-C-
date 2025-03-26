@@ -34,10 +34,23 @@ namespace WebApplication1
             app.UseRouting();
 
             app.UseAuthorization();
+            
+            app.MapControllerRoute(
+                name: "olympics",
+                pattern: "Olympics/{SelectedGame}/{SelectedCategory?}",
+                defaults: new { controller = "Olympics", action = "Index" });
+            
+            app.MapControllerRoute(
+                name: "details",
+                pattern: "Olympics/Details/{id}/{SelectedGame?}/{SelectedCatergory?}",
+                defaults: new { controller = "Olympics", action = "Details" });
+
 
             app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Olympics}/{action=Index}/{id?}");
+               name: "default",
+               pattern: "{controller=Olympics}/{action=Index}/{id?}");
+
+            
 
             app.Run();
         }
