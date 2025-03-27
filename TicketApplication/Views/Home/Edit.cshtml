@@ -1,0 +1,31 @@
+﻿@model Ticket
+
+<h2>Edit Exisiting Ticket</h2>
+<div asp-validation-summary="All" class="text-danger"></div>
+<div class="form-control">
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <label>Name:</label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Description:</label>
+            <textarea asp-for="Description" class="form-control mt-2"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Status:</label>
+            <select asp-for="TicketStatusId" asp-items="ViewBag.Statuses" class="form-control mt-2"></select>
+        </div>
+        <div class="form-group">
+            <label>Sprint Number:</label>
+            <input asp-for="SprintNumber" type="numebr" class="form-control mt-2" />
+        </div>
+        <div class="form-group">
+            <label>Point Value:</label>
+            <input asp-for="PointValue" type="number" class="form-control mt-2" />
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Save</button>
+        <a asp-action="Index" class="btn btn-primary mt-3">Cancel</a>
+    </form>
+</div>

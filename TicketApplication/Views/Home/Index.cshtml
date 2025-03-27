@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Ticket>
+
+<h2>List of Tickets</h2>
+<div class="col-sm-10">
+    <table class="table table-bordered table-striped mt-2">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Sprint Number</th>
+                <th>Point Value</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ticket in Model)
+            {
+                <tr>
+                    <td>@ticket.Name</td>
+                    <td>@ticket.Description</td>
+                    <td>@ticket.Status?.Name</td>
+                    <td>@ticket.SprintNumber</td>
+                    <td>@ticket.PointValue</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@ticket.Id">Edit</a> |
+                        <a asp-action="Delete" asp-route-id="@ticket.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-action="Add" class="btn btn-primary">Add New Ticket</a>
+</div>

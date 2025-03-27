@@ -1,0 +1,32 @@
+﻿@model Ticket
+
+<h2>Delete this Ticket?</h2>
+<p>Would you like to delete this ticket?</p>
+
+<table class="table table-bordered table-striped mt-2">
+    <tr>
+        <th>Name</th>
+        <td>@Model.Name</td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td>@Model.Description</td>
+    </tr>
+    <tr>
+        <th>Sprint Number</th>
+        <td>@Model.SprintNumber</td>
+    </tr>
+    <tr>
+        <th>Point Value</th>
+        <td>@Model.PointValue</td>
+    </tr>
+    <tr>
+        <th>Status</th>
+        <td>@Model.Status?.Name</td>
+    </tr>
+</table>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger mt-3">Delete</button>
+    <a asp-action="Index" class="btn btn-primary mt-3">Cancel</a>
+</form>
