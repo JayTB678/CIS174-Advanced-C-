@@ -3,15 +3,16 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TicketApplication.Models;
+using TicketApplication.Repository;
 
 namespace TicketApplication.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly TicketContext context;
-    public HomeController(TicketContext ctx)
+    private readonly ITicketRepository repository;
+    public HomeController(ITicketRepository repo)
     {
-        context = ctx;
+        repository = repo;
     }
 
     //private readonly ILogger<HomeController> _logger;
@@ -23,13 +24,13 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        var tickets = context.Tickets.Include(t => t.Status).ToList();
+        var tickets = repository.GetAll();
         return View(tickets);
     }
 
     public IActionResult Add()
     {
-        ViewBag.Statuses = new SelectList(context.TicketStatuses, "Id", "Name");
+        ViewBag.Statuses = new SelectList(repository.GetStatuses(), "Id", "Name");
         return View();
     }
     [HttpPost]
@@ -37,21 +38,20 @@ public class HomeController : Controller
     {
         if (ModelState.IsValid)
         {
-            context.Tickets.Add(ticket);
-            context.SaveChanges();
+            repository.Add(ticket);
             return RedirectToAction("Index");
         }
-        ViewBag.Statuses = new SelectList(context.TicketStatuses, "Id", "Name", ticket.TicketStatusId);
+        ViewBag.Statuses = new SelectList(repository.GetStatuses(), "Id", "Name", ticket.TicketStatusId);
         return View(ticket);
     }
     public IActionResult Edit(int id)
     {
-        var ticket = context.Tickets.Include(t => t.Status).FirstOrDefault(t => t.Id == id);
+        var ticket = repository.GetById(id);
         if (ticket == null)
         {
             return NotFound();
         }
-        ViewBag.Statuses = new SelectList(context.TicketStatuses, "Id", "Name", ticket.TicketStatusId);
+        ViewBag.Statuses = new SelectList(repository.GetStatuses(), "Id", "Name", ticket.TicketStatusId);
         return View(ticket);
     }
     [HttpPost]
@@ -59,16 +59,15 @@ public class HomeController : Controller
     {
         if (ModelState.IsValid)
         {
-            context.Update(ticket);
-            context.SaveChanges();
+            repository.Update(ticket);
             return RedirectToAction("Index");
         }
-        ViewBag.Statuses = new SelectList(context.TicketStatuses, "Id", "Name", ticket.TicketStatusId);
+        ViewBag.Statuses = new SelectList(repository.GetStatuses(), "Id", "Name", ticket.TicketStatusId);
         return View(ticket);
     }
     public IActionResult Delete(int id)
     {
-        var ticket = context.Tickets.Include(t => t.Status).FirstOrDefault(t => t.Id == id);
+        var ticket = repository.GetById(id);
         if (ticket == null)
         {
             return NotFound();
@@ -78,8 +77,7 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult Delete(Ticket ticket)
     {
-        context.Tickets.Remove(ticket);
-        context.SaveChanges();
+        repository.Delete(ticket.Id);
         return RedirectToAction("Index");
     }
     public IActionResult Privacy()
