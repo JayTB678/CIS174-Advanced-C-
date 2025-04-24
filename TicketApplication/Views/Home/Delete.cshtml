@@ -22,7 +22,7 @@
     </tr>
     <tr>
         <th>Status</th>
-        <td>@Model.Status?.Name</td>
+        <td>@await Component.InvokeAsync("TicketStatus", new {statusName = Model.Status?.Name ?? "Unknown"})</td>
     </tr>
 </table>
 <form asp-action="Delete">

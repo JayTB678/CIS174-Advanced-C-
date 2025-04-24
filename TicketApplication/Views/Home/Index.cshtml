@@ -19,7 +19,7 @@
                 <tr>
                     <td>@ticket.Name</td>
                     <td>@ticket.Description</td>
-                    <td>@ticket.Status?.Name</td>
+                    <td>@await Component.InvokeAsync("TicketStatus", new {statusName = ticket.Status?.Name ?? "Unknown"})</td>
                     <td>@ticket.SprintNumber</td>
                     <td>@ticket.PointValue</td>
                     <td>
